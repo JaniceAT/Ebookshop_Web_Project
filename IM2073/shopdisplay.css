@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Playfair+Display&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand&display=swap');
+
+/* styles.css */
+body {
+   font-family: "Poppins", sans-serif;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 20px;
+   background-color: #041925; /* Fallback color */
+   color: #e0e3ff; /* Light cream text */
+   position: relative;
+   z-index: 1;
+}
+
+body::before {
+   content: "";
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-image: url('background image.png'); /* Replace with your image path */
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   opacity: 0.3; /* Adjust this value to control transparency */
+   z-index: -1; /* Push behind the content */
+}
+
+.header {
+   font-family: "Krona One", serif;
+   font-optical-sizing: auto;
+   font-weight: 400;
+   text-align: center;
+   margin-top: 10px;
+   font-size: 36px;
+   font-weight: bold;
+   color: #f1f3ff; 
+}
+
+h2 {
+   margin-top: 12px;
+   color: #f1f3ff; 
+}
+
+.book-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+   gap: 30px;
+   width: 100%;
+   max-width: 1000px;
+   padding: 20px;
+   margin-right: 300px;
+}
+
+.book-container {
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Lower transparency */
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   background-color: rgba(122, 119, 134, 0.059); /* Softer, warm background */
+   backdrop-filter: blur(10px); /* Blurs background behind it */
+   transition: transform 0.3s;
+   text-align: center;
+   position: relative;
+   overflow: hidden;
+}
+
+/* Grainy texture effect */
+.book-container::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-image: url('grainy\ effect.jpg'); /* Grain texture */
+   opacity: 0.10; /* Adjust grain strength */
+   mix-blend-mode: overlay;
+   pointer-events: none;
+   background-size: cover;
+}
+
+.book-container:hover {
+   transform: scale(1.05);
+}
+
+.book-container img {
+   width: 100%;
+   height: 320px;
+   border-radius: 8px 8px 0 0;
+   object-fit: cover; /* Ensures the image covers the area without distortion */
+   margin-bottom: 15px;
+}
+
+.book-container h3 {
+   margin: 1px 0;
+   font-size: 16px;
+   color: #f1f3ff; /* for book titles */
+   text-align: center;
+   line-height: 1.15;
+   font-weight: 700;
+}
+
+.book-container p {
+   font-size: 12px;
+   margin: 5px 0;
+   color: #f1f3ff; /* for descriptions */
+   text-align: center;
+}
+
+.book-container .price {
+   font-family: "Krona One", serif;
+   font-weight: bold;
+   font-size: 18px;
+   color: #f1f3ff; 
+}
+
+.book-container .details-btn {
+   background-color: #041925; 
+   color: #f1f3ff;
+   padding: 4px 8px;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   font-size: 12px;
+   text-decoration: none;
+   margin: 10px 0 15px 0;
+}
+
+.book-container .details-btn:hover {
+   background-color: #f1f3ff1a; 
+}
+
+.quantity-controls {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   margin-top: 10px;
+}
+
+.quantity-controls button {
+   font-size: 16px;
+   cursor: pointer;
+   background-color: #041925; /* Orange background for buttons */
+   color: #f1f3ff;
+   border: none;
+   border-radius: 12px;
+   width: 24px;
+   height: 24px;
+   text-align: center;
+}
+
+#cart {
+   position: fixed;
+   top: 20px;
+   right: 20px;
+   width: 250px;
+   padding: 20px;
+   background-color: rgba(122, 119, 134, 0.059);
+   backdrop-filter: blur(10px);
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+   border-radius: 8px;
+   margin-top: 148px;
+   margin-right: 15px;
+   backdrop-filter: blur(10px);
+}
+
+#cart::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-image: url('grainy\ effect.jpg'); /* Grain texture */
+   opacity: 0.10; /* Adjust grain strength */
+   mix-blend-mode: overlay;
+   pointer-events: none;
+   background-size: cover;
+}
+
+#cart h4 {
+   font-family: "Krona One", serif;
+   margin-top: 0;
+   font-size: 18px;
+   font-weight: bold;
+   color: #FAF8EF; /* Light cream color for cart header */
+}
+
+#cart-items {
+   list-style-type: none;
+   padding: 0;
+   margin: 10px 0;
+   max-height: 180px;
+   overflow-y: auto;
+}
+
+#cart-items li {
+   margin-bottom: 10px;
+   font-size: 14px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   color: #FAF8EF; /* Light text for cart items */
+}
+
+#cart-total {
+   font-size: 18px;
+   font-weight: bold;
+   margin-top: 10px;
+   text-align: right;
+   color: #FAF8EF; /* Light cream text */
+}
+
+.buy-now-btn {
+   display: block;
+   width: 100%;
+   padding: 10px;
+   background-color: #f1f3ff; /* Red button background */
+   color: #041925;
+   font-size: 16px;
+   border: none;
+   border-radius: 5px;
+   text-align: center;
+   cursor: pointer;
+   margin-top: 20px;
+}
+
+.buy-now-btn:hover {
+   background-color: #f1f3ff1a;
+   color: #f1f3ff;
+}

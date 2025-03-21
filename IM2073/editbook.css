@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Playfair+Display&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand&display=swap');
+
+body {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #041925; /* Fallback color */
+    color: #e0e3ff; /* Light cream text */
+    position: relative;
+    z-index: 1;
+ }
+ 
+ body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('background image.png'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.3; /* Adjust this value to control transparency */
+    z-index: -1; /* Push behind the content */
+ }
+
+h2 {
+    font-family: "Krona One", serif;
+    text-align: center;
+    font-size: 28px;
+    margin-top: 0px;
+}
+
+form {
+    width: 100vh;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Lower transparency */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(122, 119, 134, 0.059); /* Softer, warm background */
+    backdrop-filter: blur(10px); /* Blurs background behind it */
+    transition: transform 0.3s;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 30px 0;
+}
+
+/* Grainy texture effect */
+form::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('grainy\ effect.jpg'); /* Grain texture */
+    opacity: 0.10; /* Adjust grain strength */
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-size: cover;
+ }
+
+/* Styling for the form group */
+.form-group {
+    display: flex;
+    flex-direction: row; /* Stack label and input vertically */
+    margin-bottom: 25px; /* Space between form groups */
+    align-items: center;
+}
+
+/* Styling for labels */
+label {
+    width: 300px;
+    font-weight: bold; /* Bold text */
+    display: block;
+    text-align: left;
+    margin-right: 20px;
+}
+
+/* Styling for input fields and select dropdowns */
+input, select, textarea {
+    width: 100%; /* Make the inputs take full width */
+    padding: 10px; /* Space inside input fields */
+    margin-top: 5px; /* Small space above the input field */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ddd; /* Light gray border */
+    box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+/* Styling for the textarea */
+textarea {
+    resize: vertical; /* Allow vertical resizing only */
+    min-height: 60px; /* Minimum height for better visibility */
+}
+
+button {
+    width: 20%;
+    padding: 8px;
+    background-color: #f1f3ff; /* Red button background */
+    color: #041925;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #f1f3ff1a;
+    color: #f1f3ff;
+}
